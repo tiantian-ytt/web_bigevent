@@ -7,6 +7,7 @@ $.ajaxPrefilter(function (options) {
       Authorization: localStorage.getItem('token') || ''
     }
   }
+  //全局统一挂载
   options.complete = function (res) {
     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
       //强制清空token
